@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-    <div class="grid gap-5 grid-cols-2">
+    {{-- <div class="grid gap-5 grid-cols-2">
         <div class="flex items-center justify-center mt-10">
             <x-primary-button class="w-11/12 py-3 flex justify-center">
                 <a href="{{asset('kitchen-temp')}}">{{ __('Temperature') }}</a>
@@ -31,7 +31,7 @@
                 <a href="{{asset('emergency')}}">{{ __('Smoke') }}</a>
             </x-primary-button>
         </div>
-    </div>
+    </div> --}}
 
     <div class="p-10 block items-center justify-center">
         <div class="p-1 text-5xl font-bold text-BLACK text-center">
@@ -40,6 +40,6 @@
         <div class="underline p-1 text-5xl font-bold text-green-500 text-center">
             LOW
          </div>
-        </div>
+    </div>
 
 </x-app-layout>

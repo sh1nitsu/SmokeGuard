@@ -1,5 +1,5 @@
 <x-app-layout>
-    
+
 
     <a class="p-2 rounded-md" href="{{ asset('temperature') }}">
         <div class="flex items-center p-1 text-xs text-black">
@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-    <div class="grid gap-5 grid-cols-2">
+    {{-- <div class="grid gap-5 grid-cols-2">
         <div class="flex items-center justify-center mt-10">
             <x-primary-button class="w-11/12 py-3 flex justify-center">
                 <a href="{{asset('kitchen-temp')}}">{{ __('Temperature') }}</a>
@@ -31,10 +31,29 @@
                 <a href="{{asset('kitchen-smoke')}}">{{ __('Smoke') }}</a>
             </x-primary-button>
         </div>
-    </div>
+    </div> --}}
 
     <div class="p-10 flex items-center justify-center">
         <img name="img" src="{{ asset('storage/temp.png') }}" alt="img" class="h-[200px]" >
-        </div> 
+    </div>
+
+    <div class="pt-4 rounded-md ">
+        <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
+            <div class=" overflow-hidden  sm:rounded-lg">
+                <div class="p-1 text-2xl font-bold text-black text-center">
+                    KITCHEN TEMPERATURE
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-10 block items-center justify-center">
+        <div class="p-1 text-5xl font-bold text-BLACK text-center">
+           STATUS:
+        </div>
+        <div class="underline p-1 text-5xl font-bold text-green-500 text-center">
+            LOW
+         </div>
+    </div>
 
 </x-app-layout>

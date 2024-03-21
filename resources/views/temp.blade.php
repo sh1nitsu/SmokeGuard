@@ -11,8 +11,8 @@
     </div>
     <div class="pt-2 rounded-md">
         <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
-            <div class="bg-red-500 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-3 text-white">
+            <div class="bg-white border border-red-500 overflow-hidden shadow-xl sm:rounded-lg">
+                <div clasgray-9003 text-white">
                     Hello,
                     Temperature
                 </div>
@@ -22,8 +22,8 @@
 
     {{-- <div class="py-8 rounded-md">
         <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
-            <div class="bg-red-500 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-1 text-white">
+            <div class="bg-white border border-red-500 overflow-hidden shadow-xl sm:rounded-lg">
+                <div clasgray-9001 text-white">
                     Contacts
                 </div>
                 <ul class="flex justify-between items-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
@@ -35,7 +35,7 @@
                               Kim
                         </a>
                     </li>
-                    <li class="text-center"> 
+                    <li class="text-center">
                         <a href="#" class="hover:underline text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-20 h-20">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -67,8 +67,8 @@
 
     <div class="pt-5">
         <div class="w-11/12 mx-auto sm:px-6 lg:px-8 ">
-            <div class="bg-red-500 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-14 text-white font-bold">
+            <div class="bg-white border border-red-500 overflow-hidden shadow-xl sm:rounded-lg">
+                <div class="p-14 texgray-900te font-bold">
                     {{ __('There is no smoke detected.') }}
                 </div>
             </div>
@@ -144,58 +144,149 @@
 
     <div>
         <div class="grid gap-5 grid-cols-2 pt-10">
-            <a href="{{asset('kitchen-temp')}}">
-            <div class="pt-2 rounded-md">
-                <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-red-500 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="p-3 py-6 text-white text-center">
-                            KITCHEN
+            <a href="{{ asset('kitchen-temp') }}">
+                <div class="pt-2 rounded-md">
+                    <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
+                        <div class="bg-white border border-red-500 overflow-hidden shadow-xl sm:rounded-lg">
+                            <div class="p-3 text-gray-900 text-center">
+                                KITCHEN
+                            </div>
+
+                            <div class="flex items-center justify-center">
+                                <div>
+                                    <div class="p-1 text-xs font-bold text-BLACK text-center">
+                                        Smoke Lvl:
+                                    </div>
+                                    <div class="underline p-1 text-xs font-bold text-green-500 text-center">
+                                        LOW
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <img name="img" src="{{ asset('storage/temp.png') }}" alt="img"
+                                        class="h-[60px]">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </a>
             <div class="pt-2 rounded-md">
                 <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-red-500 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="p-3 py-6 text-white text-center">
-                           LIVING ROOM
+                    <div class="bg-white border border-red-500 overflow-hidden shadow-xl sm:rounded-lg">
+                        <div class="p-3 text-gray-900 text-center">
+                            LIVING ROOM
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <div>
+                                <div class="p-1 text-xs font-bold text-BLACK text-center">
+                                    Smoke Lvl:
+                                </div>
+                                <div class="underline p-1 text-xs font-bold text-red-500 text-center">
+                                    HIGH
+                                </div>
+                            </div>
+
+                            <div>
+                                <img name="img" src="{{ asset('storage/temp.png') }}" alt="img"
+                                    class="h-[60px]">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="pt-2 rounded-md">
                 <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-red-500 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="p-3 py-6 text-white text-center">
+                    <div class="bg-white border border-red-500 overflow-hidden shadow-xl sm:rounded-lg">
+                        <div class="p-3 text-gray-900 text-center">
                             TINE'S ROOM
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pt-2 rounded-md">
-                <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-red-500 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="p-3 py-6 text-white text-center">
-                           DINING ROOM
+                        <div class="flex items-center justify-center">
+                            <div>
+                                <div class="p-1 text-xs font-bold text-BLACK text-center">
+                                    Smoke Lvl:
+                                </div>
+                                <div class="underline p-1 text-xs font-bold text-green-500 text-center">
+                                    LOW
+                                </div>
+                            </div>
+
+                            <div>
+                                <img name="img" src="{{ asset('storage/temp.png') }}" alt="img"
+                                    class="h-[60px]">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="pt-2 rounded-md">
                 <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-red-500 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="p-3 py-6 text-white text-center">
+                    <div class="bg-white border border-red-500 overflow-hidden shadow-xl sm:rounded-lg">
+                        <div class="p-3 text-gray-900 text-center">
+                            DINING ROOM
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <div>
+                                <div class="p-1 text-xs font-bold text-BLACK text-center">
+                                    Smoke Lvl:
+                                </div>
+                                <div class="underline p-1 text-xs font-bold text-orange-500 text-center">
+                                    MEDIUM
+                                </div>
+                            </div>
+
+                            <div>
+                                <img name="img" src="{{ asset('storage/temp.png') }}" alt="img"
+                                    class="h-[60px]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-2 rounded-md">
+                <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white border border-red-500 overflow-hidden shadow-xl sm:rounded-lg">
+                        <div class="p-3 text-gray-900 text-center">
                             BALCONY
                         </div>
+                        <div class="flex items-center justify-center">
+                            <div>
+                                <div class="p-1 text-xs font-bold text-BLACK text-center">
+                                    Smoke Lvl:
+                                </div>
+                                <div class="underline p-1 text-xs font-bold text-orange-500 text-center">
+                                    MEDIUM
+                                </div>
+                            </div>
+
+                            <div>
+                                <img name="img" src="{{ asset('storage/temp.png') }}" alt="img"
+                                    class="h-[60px]">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="pt-2 rounded-md">
                 <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-red-500 overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="p-3 py-6 text-white text-center">
-                        BED ROOM
+                    <div class="bg-white border border-red-500 overflow-hidden shadow-xl sm:rounded-lg">
+                        <div class="p-3 text-gray-900 text-center">
+                            BED ROOM
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <div>
+                                <div class="p-1 text-xs font-bold text-BLACK text-center">
+                                    Smoke Lvl:
+                                </div>
+                                <div class="underline p-1 text-xs font-bold text-green-500 text-center">
+                                    LOW
+                                </div>
+                            </div>
+
+                            <div>
+                                <img name="img" src="{{ asset('storage/temp.png') }}" alt="img"
+                                    class="h-[60px]">
+                            </div>
                         </div>
                     </div>
                 </div>
