@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contacts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ContactsController extends Controller
 {
@@ -15,6 +16,7 @@ class ContactsController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.Contacts::class],
         ]);
         Contacts::create([
+            'user_id' => Auth::user()->id,
             'name' => $request->name,
             'phone' => $request->phone,
             'email' => $request->email,
