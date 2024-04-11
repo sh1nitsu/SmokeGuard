@@ -2,16 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contacts;
 use Illuminate\Http\Request;
 
 class ContactsController extends Controller
 {
-    public function index() 
+    public function store(Request $request)
     {
-        return view ('contacts');
+        $request->validate([
+            'name' => ['required', 'string', 'min:2', 'max:255'],
+            'phone' => ['required', 'numeric', 'digits:11', 'unique:'.Contacts::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.Contacts::class],
+        ]);
+        Contacts::create([
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+        ]);
+
+        return redirect('contacts')->with('message', 'New Contact Added.');
     }
 
-    public function add() 
+
+    public function index()
+    {
+        $contacts = Contacts::latest()->get();
+        return view ('contacts',[
+            'contacts' => $contacts
+        ]);
+    }
+
+    public function add()
     {
         return view('add-contacts');
     }

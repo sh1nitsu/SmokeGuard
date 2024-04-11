@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contacts;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function index() {
-        return view ('dashboard');
+        $contacts = Contacts::Latest()->get();
+        return view ('dashboard',[
+            'contacts' => $contacts
+        ]);
     }
 }

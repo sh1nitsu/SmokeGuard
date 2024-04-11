@@ -1,4 +1,5 @@
 <x-app-layout>
+    <x-message />
 
     <a class="p-2 rounded-md" href="{{ asset('dashboard') }}">
         <div class="flex items-center p-1 text-xs text-black">
@@ -31,66 +32,29 @@
     <div class="py-8 rounded-md">
         <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="flex border border-red-500 rounded-lg">
+                @forelse ($contacts as $contact)
+                <div class="flex border border-red-500 rounded-lg mb-1">
                     <div class="ml-2 flex bg-gray-50 justify-center items-center text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                           </svg>
                     </div>
-                    <div class="ml-2 text-gray-900">
+                    <div class="ml-2 p-2 text-gray-900">
                         <div>
-                            Kim Udtuhan
+                            {{$contact->name}}
                         </div>
                         <div>
-                            09435672434
-                        </div>
-                    </div>
-                </div>
-                <div class="flex border border-red-500 rounded-lg ">
-                    <div class="ml-2 flex justify-center items-center text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                          </svg>
-                    </div>
-                    <div class="ml-2 text-gray-900">
-                        <div>
-                            Ma. Joana Fabro
-                        </div>
-                        <div>
-                            09443434654
+                            {{$contact->phone}}
                         </div>
                     </div>
                 </div>
-                <div class="flex border border-red-500 rounded-lg ">
-                    <div class="ml-2 flex justify-center items-center text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                          </svg>
-                    </div>
-                    <div class="ml-2 text-gray-900">
-                        <div>
-                            Jasmin Nerja
-                        </div>
-                        <div>
-                            09564564543
-                        </div>
+                @empty
+                <div class="flex items-center justify-center border border-red-500 rounded-lg">
+                    <div class="ml-2 text-gray-900 p-5">
+                        No Contact Added Yet.
                     </div>
                 </div>
-                <div class="flex border border-red-500 rounded-lg ">
-                    <div class="ml-2 flex justify-center items-center text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                          </svg>
-                    </div>
-                    <div class="ml-2 text-gray-900">
-                        <div>
-                            Karl Lewis Doctolero
-                        </div>
-                        <div>
-                            09553453465
-                        </div>
-                    </div>
-                </div>
+                @endforelse
             </div>
         </div>
     </div>
