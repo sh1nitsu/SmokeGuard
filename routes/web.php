@@ -36,6 +36,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/add-contacts', [ContactsController::class, 'add'])->name('add-contacts');
+Route::get('/add-room', [TempController::class, 'add'])->name('add-room');
+Route::post('/add-room', [TempController::class, 'store'])->name('room.store');
 Route::post('/contacts', [ContactsController::class, 'store'])->name('store');
 
 Route::get('/emergency', [EmergencyController::class, 'index'])->name('emergency');

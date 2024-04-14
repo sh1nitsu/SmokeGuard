@@ -28,7 +28,8 @@ class ContactsController extends Controller
 
     public function index()
     {
-        $contacts = Contacts::latest()->get();
+        $user_id = Auth::user()->id;
+        $contacts = Contacts::Latest()->where('user_id',$user_id)->get();
         return view ('contacts',[
             'contacts' => $contacts
         ]);

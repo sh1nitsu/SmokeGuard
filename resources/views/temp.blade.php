@@ -138,8 +138,16 @@
                 <div class="p-1 text-2xl font-bold text-black text-center">
                     TEMPERATURE OF ROOMS
                 </div>
+                <div class="text-lg font-bold text-gray-500 text-center">
+                    You can add a new Room.
+                </div>
             </div>
         </div>
+    </div>
+    <div class="flex items-center justify-center mt-4">
+        <x-primary-button class="w-11/12 py-3 flex justify-center">
+            <a href="{{asset('add-room')}}">{{ __('Add Room') }}</a>
+        </x-primary-button>
     </div>
 
     <div>

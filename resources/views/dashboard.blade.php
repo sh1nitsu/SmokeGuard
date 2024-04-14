@@ -21,6 +21,7 @@
             </div>
         </div>
 
+        <h1 class="tracking-widest py-5 text-orange-500 text-xl font-extrabold text-center border-b-2 ">Admin Dashboard</h1>
         <div class="pt-3">
             <div class="w-11/12 mx-auto">
                 <div class="flex items-center">
@@ -28,7 +29,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="gray" class="w-6 h-6 ml-3 mt-1">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                   </svg>
-                <h1 class=" mt-2 text-orange-500 text-xl font-bold ml-3">Users</h1>
+                <h1 class=" mt-2 text-orange-500 text-xl font-bold ml-3">Users List</h1>
                 </div>
             </div>
         </div>
@@ -130,17 +131,17 @@
                     </li>
                     <li>
                         <a href="{{ asset('contacts') }}" class="hover:underline">
-                            <i class="ri-contacts-book-3-line text-3xl text-white"></i>
+                            <i class="ri-contacts-book-line text-3xl text-white"></i>
                         </a>
                     </li>
                     <li>
                         <a href="{{ asset('emergency') }}" class="hover:underline">
-                            <i class="ri-error-warning-line text-3xl text-white"></i>
+                            <i class="ri-customer-service-line text-3xl text-white"></i>
                         </a>
                     </li>
                     <li>
                         <a href="{{ asset('temperature') }}" class="hover:underline">
-                            <i class="ri-temp-hot-line text-3xl text-white"></i>
+                            <i class="ri-pulse-fill text-3xl text-white"></i>
                         </a>
                     </li>
                 </ul>
