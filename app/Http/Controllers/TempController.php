@@ -9,8 +9,20 @@ use Illuminate\Support\Facades\Auth;
 class TempController extends Controller
 {
     public function index() {
-        return view ('temp');
+        $data = Rooms::first();
+        return view ('temp',[
+            'data' => $data,
+         ]);
     }
+
+    public function smokeValue(){
+        $data = Rooms::first();
+        return response()->json([
+            'smoke' => $data->smoke,
+            'value' => $data->value,
+        ]);
+    }
+
 
     public function temp()
     {

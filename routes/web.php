@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/smoke-value',[TempController::class, 'smokeValue']);
+
+
 Route::get('/', function () {
     return view('auth.login');
 });
