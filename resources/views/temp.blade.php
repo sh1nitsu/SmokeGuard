@@ -138,8 +138,17 @@
                 <div class="p-1 text-2xl font-bold text-black text-center">
                     TEMPERATURE OF ROOMS
                 </div>
+                <div class="text-lg font-bold text-gray-500 text-center">
+                    You can add a new Room.
+                </div>
             </div>
         </div>
+    </div>
+
+    <div class="flex items-center justify-center mt-4">
+        <x-primary-button class="w-11/12 py-3 flex justify-center">
+            <a href="{{ asset('add-room') }}">{{ __('Add Room') }}</a>
+        </x-primary-button>
     </div>
 
     <div>
@@ -157,21 +166,20 @@
                                     <div class="p-1 text-xs font-bold text-BLACK text-center">
                                         Smoke Lvl:
                                     </div>
-                                    <div class="underline p-1 text-xs font-bold text-green-500 text-center">
-                                        LOW
+                                    <div class="underline p-1 text-xs font-bold text-center">
+                                        <div id="text-value" class="p-2"></div>
                                     </div>
                                 </div>
 
-                                <div>
-                                    <img name="img" src="{{ asset('storage/temp.png') }}" alt="img"
-                                        class="h-[60px]">
+                                <div class="ml-4 border border-black rounded-full p-4">
+                                    <div id="smoke-value"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </a>
-            <div class="pt-2 rounded-md">
+            {{-- <div class="pt-2 rounded-md">
                 <div class="w-11/12 mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white border border-red-500 overflow-hidden shadow-xl sm:rounded-lg">
                         <div class="p-3 text-gray-900 text-center">
@@ -290,8 +298,35 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
+
+
+
+
+
+    <script>
+        function fetchSmokeValue() {
+            $.get('/smoke-value', function(data) {
+                $('#smoke-value').text(data.smoke);
+                $('#text-value').text(data.value);
+
+                if (data.value === 'MEDIUM') {
+                    $('#text-value').addClass('medium-text');
+                } else if (data.value === 'HIGH') {
+                    $('#text-value').addClass('high-text');
+                } else {
+                    $('#text-value').addClass('low-text');
+                }
+            });
+        }
+
+        // Update the value every 5 seconds
+        setInterval(fetchSmokeValue, 1000);
+
+        // Call the function initially to display the current value
+        fetchSmokeValue();
+    </script>
 
 </x-app-layout>
