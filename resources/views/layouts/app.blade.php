@@ -29,6 +29,10 @@
         .high-text {
             color: red;
         }
+
+        .low-text {
+            color: black;
+        }
     </style>
 </head>
 

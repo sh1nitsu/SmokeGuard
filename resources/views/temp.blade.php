@@ -167,12 +167,12 @@
                                         Smoke Lvl:
                                     </div>
                                     <div class="underline p-1 text-xs font-bold text-center">
-                                        <div id="text-value" class="p-2"></div>
+                                        <div id="text" class="p-2"></div>
                                     </div>
                                 </div>
 
                                 <div class="ml-4 border border-black rounded-full p-4">
-                                    <div id="smoke-value"></div>
+                                    <div id="smoke"></div>
                                 </div>
                             </div>
                         </div>
@@ -309,21 +309,13 @@
     <script>
         function fetchSmokeValue() {
             $.get('/smoke-value', function(data) {
-                $('#smoke-value').text(data.smoke);
-                $('#text-value').text(data.value);
-
-                if (data.value === 'MEDIUM') {
-                    $('#text-value').addClass('medium-text');
-                } else if (data.value === 'HIGH') {
-                    $('#text-value').addClass('high-text');
-                } else {
-                    $('#text-value').addClass('low-text');
-                }
+                $('#text').text(data.value);
+                $('#smoke').text(data.smoke);
             });
         }
 
-        // Update the value every 5 seconds
-        setInterval(fetchSmokeValue, 1000);
+        // Update the value every 2 seconds
+        setInterval(fetchSmokeValue, 2000);
 
         // Call the function initially to display the current value
         fetchSmokeValue();
