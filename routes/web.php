@@ -49,6 +49,8 @@ Route::get('/temperature', [TempController::class, 'index'])->name('temperature'
 Route::get('/kitchen-temp', [TempController::class, 'temp'])->name('kitchen-temp');
 Route::get('/kitchen-smoke', [TempController::class, 'smoke'])->name('kitchen-smokoe');
 
+Route::post('/temperature', [TempController::class, 'store']);
+
 
 
 
