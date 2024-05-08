@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\HelloMail;
 use App\Models\Rooms;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class TempController extends Controller
 {
@@ -17,10 +19,18 @@ class TempController extends Controller
 
     public function smokeValue(){
         $data = Rooms::first();
+
+
+        if ($data->smoke >= 700) {
+            Mail::to('leesindrome0905@gmail.com')
+            ->send(New HelloMail());
+        }
         return response()->json([
             'smoke' => $data->smoke,
             'value' => $data->value,
         ]);
+
+
     }
 
 

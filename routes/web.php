@@ -5,6 +5,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmergencyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TempController;
+use App\Mail\HelloMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +25,11 @@ Route::get('/smoke-value',[TempController::class, 'smokeValue']);
 
 Route::get('/', function () {
     return view('auth.login');
+});
+
+Route::get('mail', function(){
+    Mail::to('leesindrome0905@gmail.com')
+    ->send(New HelloMail());
 });
 
 Route::get('/dashboard', function () {
